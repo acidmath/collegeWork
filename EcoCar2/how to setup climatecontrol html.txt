@@ -1,0 +1,5 @@
+add these before the closing <body> tag
+
+<script type="text/javascript" src="scripts/Button.js"></script>
+<script type="text/javascript" src="scripts/Validation.js"></script>
+<script type="text/javascript" src="scripts/ClimateControl.js"></script>
