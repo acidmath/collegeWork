@@ -1,0 +1,171 @@
+html, body, #container {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+#container {
+	position: relative;
+	/* width: 800px;
+	height: 395px; */
+}
+#sidebar {
+	float: left;
+	width: 100px;
+	height: 100%;
+}
+#content {
+	float: left;
+	width: 700px;
+	height: 395px;
+	background: #000 url('images/bg1.png') no-repeat fixed center;
+	background-size: cover;
+}
+.two_row {
+	float: left;
+	width: 100%;
+	height: 50%;
+}
+.two_col {
+	float: left;
+	height: 100%;
+	padding-left:35px;
+}
+.three_col {
+	float: left;
+	width: 33.3333%;
+	height: 100%;
+}
+
+/* BEGIN NAVIGATION */
+#navigation {
+	width: 100px; /* width of menu */
+	height:100%;
+	background-color:#cacaca;
+}
+
+#navigation ul {
+	background: white;
+	border: 1px solid #eee;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#navigation ul li {	margin:0; padding: 0;}
+#navigation ul li a {
+	display:block;
+	text-transform: uppercase;
+	color: #494949;
+	padding: 20px 15px;
+	text-decoration: none;
+	border-bottom: 1px solid #cacaca;
+	border-right: 1px solid #cacaca; /*right border between menu items*/
+	-moz-box-shadow: inset 7px 0 10px rgba(114,114,114, 0.6); /* Add inset shadow to each menu item. First 3 values in (114,114,114, 0.5) specifies rgb values, last specifies opacity */
+	-webkit-box-shadow: inset 7px 0 10px rgba(114,114,114, 0.6);
+	box-shadow: inset 7px 0 10px rgba(114,114,114, 0.6);
+	text-shadow: 0 -1px 1px #cfcfcf; /* CSS text shadow to give text some depth */
+	-moz-transition: all 0.2s ease-in-out; /* Enable CSS transition between property changes */
+	-webkit-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+#navigation ul li a:hover, #navigation ul li a.selected {
+	color: black;
+	-moz-box-shadow: inset 7px 0 10px rgba(34,171,39,0.5), inset 0 0 15px rgba(34,171,39,0.6), inset 0 0 20px rgba(34,171,39,0.8); /* Add 3 inset shadows to each menu item  */
+	-webkit-box-shadow: inset 7px 0 10px rgba(34,171,39,0.5), inset 0 0 15px rgba(34,171,39,0.6), inset 0 0 20px rgba(34,171,39,0.8);
+	box-shadow: inset 7px 0 10px rgba(34,171,39,0.5), inset 0 0 15px rgba(34,171,39,0.6), inset 0 0 20px rgba(34,171,39,0.8);
+}
+#navigation ul li img {position: relative; left: 25px;}
+#navigation img {opacity: 0.9;}
+#navigation img:hover {opacity: 1.0;}
+/* END NAVIGATION */
+
+/*BEGIN HVAC*/
+.ac_text {
+	color: white;
+	font-family: Arial;
+	font-size: 32px;
+}
+.hvac table {
+	text-align: center;
+}
+#driver_temp {
+	position:relative;
+	left:10px;
+	top:10px;
+	width:190px;
+	height:135px;
+}
+#passenger_temp {
+	position:absolute;
+	right: 10px;
+	top:10px;
+	width:190px;
+	height:135px;
+}
+#zone {
+	position: absolute;
+	top: 25px;
+	left: 45%;
+}
+#zone img:first-child,#zone img:last-child {
+	width: 160px;
+	height: 40px;
+}
+#HVAC_buttons {
+	position: absolute;
+	bottom: 0;
+	left: 270px;
+}
+#HVAC_buttons table {
+	left:50%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#hvac_save {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.temp_text {
+	color:#FFFFFF;
+	font-family:Arial;
+	font-size:53px;
+	text-align:center;
+}
+/* END HVAC*/
+
+/* BEGIN RADIO */
+.radio {	position: relative;}
+#radio_info {
+	margin: 0 auto;
+	width: 95%;
+	text-align: center;
+	background-color:#000;
+	padding: 20px;
+	border: 3px solid #f0f0f0;
+	border-bottom: 3px solid #ccc;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	color: #0F0;
+	font-family: "Lucida Console", Monaco, monospace;
+	text-shadow: 0 0 0.2em #8F7;
+	font-size:20pt;
+    table-layout: fixed;
+	}
+#media_buttons  {position: absolute; left: 10px;}
+#favorites_buttons  {position: absolute; right: 10px;}
+/* END RADIO */
+
+/* HOME SCREEN */
+#home_screen_header {
+	text-align: center; color: white;
+}
+#home_screen {
+	background: white; 
+	margin-left: auto; margin-right: auto;
+}

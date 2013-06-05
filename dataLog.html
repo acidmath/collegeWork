@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+      <title>Mechanic Page</title>
+	  <link rel="stylesheet" href="default.css" type="text/css">
+	  <link rel="stylesheet" href="mLogin.css" type="text/css">	  
+	
+   </head>
+   <body><DIV ID="container">
+   
+   		<script language="javascript"> 
+		function tClicked() {
+				var url = "./index.html";    
+				$(location).attr('href',url);
+		}
+		
+		</script>
+		
+<!-- BEGIN SIDEBAR -->
+	<DIV ID="sidebar" style="background:gray;">
+			<div ID="navigation">
+			<ul>
+				<li><a href="index.html" id="wb_Button1"><IMG SRC="images/lg1.png"></a>
+				<li><a href="ClimateControl.html" id="wb_Button2"><IMG SRC="images/lg2.png"></a>
+				<li><a href="Radio.html" id="wb_Button3"><IMG SRC="images/lg3.png"></a>
+				<li><a href="Diagnostics.html" id="wb_Button4"><IMG SRC="images/lg4.png"></a>
+				<li><a href="dataLog.html" id="wb_Button5"><IMG SRC="images/lg5.png"></a></li>
+			</ul>
+		</DIV>
+	</DIV>
+<!-- END SIDEBAR -->
+ 
+	  <!-- Page Content -->
+		<!-- Log out always display after login-->
+		<div id="content">
+		<table style="text-align: center;color:#FFF;font-size:16px;width:100%;height:20%;z-index:2;top:0px;margin: 0 auto;">
+			<tr>
+				
+				<td colspan="2" style="20px; text-align: center;color:#FFF;font-size:40px;top:0px;background-color:#cacaca;"class="button-n"><a id="logout" href=
+"index.html" style="text-decoration: none;">Logout!</a></td>
+			</tr>
+			
+			<tr>	
+				<td colspan="2">
+					<table border='1' id="errorText" style="width:100%;margin: 0 auto; border:1px solid #fff;">
+					</table>
+				</td>
+				<tr>	
+				<td style="width:30%; text-align: center;color:#FFF;font-size:40px;top:10px;background-color:#cacaca;" class="button-n"><a href="#"  onclick="prevError()" style=
+"text-decoration: none;">Prev Errors</a></td>
+				<td style="width:30%; text-align: center;color:#FFF;font-size:40px;top:10px;background-color:#cacaca;" class="button-n"><a href="#"  onclick="nextError()" style=
+"text-decoration: none;">Next Errors</a></td>
+			</tr>
+			</tr>
+		</table>
+		
+</div>
+	  <!-- End Page Content -->
+	   <script type="text/javascript" src="scripts/mainDB.js"></script>
+	   <script>
+	   insertError("Data Log Opened");
+	   selectErrorDB();
+	   </script>
+    </DIV></body>
+</html>

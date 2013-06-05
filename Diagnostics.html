@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>Diagnostic Page</title>
+	<LINK REL="stylesheet" HREF="default.css">
+</HEAD>
+
+<BODY onload="createTimeline();createTimeline2();createTimeline3();"><DIV ID="container">
+<!-- BEGIN SIDEBAR -->
+	<DIV ID="sidebar" style="background:gray;">
+			<div ID="navigation">
+			<ul>
+				<li><a href="index.html" id="wb_Button1"><IMG SRC="images/lg1.png"></a>
+				<li><a href="ClimateControl.html" id="wb_Button2"><IMG SRC="images/lg2.png"></a>
+				<li><a href="Radio.html" id="wb_Button3"><IMG SRC="images/lg3.png"></a>
+				<li><a href="Diagnostics.html" id="wb_Button4"><IMG SRC="images/lg4.png"></a>
+			</ul>
+		</DIV>
+	</DIV>
+<!-- END SIDEBAR -->
+	<DIV ID="content">
+		<DIV ID="content_left" CLASS="two_col">
+			<br>
+			
+			
+			<table>
+				<tr>
+					<td><span style="color:#FFFFFF;font-family:Arial;font-size:33px;width:150px;">Voltage<p id="volt" style="color:#FFF000;font-size:20px;"></p></span></td>
+					<td><canvas id="voltage_chart" width="400" height="100"></canvas></td>
+				</tr>
+				<tr>
+					<td><span style="color:#FFFFFF;font-family:Arial;font-size:33px;width:150px;">Temperature<p id="temp" style="color:#FFF000;font-size:20px;"></p></span></td>
+					<td><canvas id="temperature_chart" width="400" height="100"></canvas></td>
+				</tr>
+				<tr>
+					<td><span style="color:#FFFFFF;font-family:Arial;font-size:33px;width:150px;">State of Charge<p id="soc" style="color:#FFF000;font-size:20px;"></p></span></td>
+					<td><canvas id="oil_level_chart" width="400" height="100"></canvas></td>
+				</tr>
+			</table>
+		</DIV>
+		<DIV ID="content_right" CLASS="two_col"></DIV>
+	</DIV>
+</DIV>
+
+
+		<script type="text/javascript" src="scripts/smoothie.js"></script>
+		<script type="text/javascript">
+			// Randomly add a data point every 500ms
+			var x = 1;
+			var y = 0;
+			var random = new TimeSeries();
+			var random2 = new TimeSeries();
+			var random3 = new TimeSeries();
+			
+			var value1 = 0;
+			var value2 = 0;
+			var value3 = 0;
+						///////////////////////  Procedurally generated 
+			var hardTempMax =170;
+			var hardTempMin = 150;
+			var curTemp =70;
+			var localGoal = 13;
+			var randTemp=(hardTempMax+hardTempMin)/2
+			
+			//////
+			function nextTemp(){
+				randTemp = (Math.random() * (hardTempMax - hardTempMin));
+				if ( curTemp < hardTempMin ){
+					curTemp += 8*Math.random();
+				} else if( curTemp > hardTempMax){
+					curTemp = hardTempMax;
+			}
+
+if(curTemp<localGoal){
+	if(localGoal-curTemp<.1){
+	 localGoal=(Math.random()*(hardTempMax-hardTempMin)+hardTempMin);
+	
+	}else{
+	curTemp+=Math.random();
+	}
+
+}else	{
+	if(curTemp-localGoal<.1){
+	 localGoal=(Math.random()*(hardTempMax-hardTempMin)+hardTempMin);
+	
+	}else{
+	curTemp-=Math.random();
+	}
+	}
+	
+	
+	value2 = curTemp;
+				document.getElementById("temp").innerHTML = value2.toFixed(2)+ " F ";
+//alert (curTemp+" LocalGoal"+localGoal);
+return value2;
+}
+			
+			function volt_data() {
+				value1 = Math.sin(Math.random()) + 12;
+				document.getElementById("volt").innerHTML = value1.toFixed(1)+ " V";
+				return value1;
+			}
+			function temperature_data(x) {
+				value2 = 175*(1-Math.exp((-1)*0.1*x));
+				document.getElementById("temp").innerHTML = value2.toFixed(2);
+				return value2;
+			}
+			function oil_data(y) {
+				var value3 = 99-0.1*y;
+				document.getElementById("soc").innerHTML = value3.toFixed(3) + " %";
+				return value3;
+			}
+			setInterval(function() {
+				random.append(new Date().getTime(), volt_data());
+				random2.append(new Date().getTime(), nextTemp());
+				random3.append(new Date().getTime(), oil_data(y));
+				x++;
+				y++;
+			}, 2000);
+
+			function createTimeline() {
+				var chart = new SmoothieChart({
+					millisPerPixel:100,
+					interpolation:'linear',
+					scaleSmoothing:0.01,
+					grid:{verticalSections:4},labels:{fontSize:20},
+					minValue:11,
+					maxValue:13,
+					horizontalLines:[{color:'#ffffff',lineWidth:1,value:12},{color:'#880000',lineWidth:2,value:16},{color:'#880000',lineWidth:2,value:8}]
+					});
+				chart.addTimeSeries(random, {
+					strokeStyle : 'rgba(255, 255, 0, 1)',
+					fillStyle : 'rgba(255, 255, 0, 0.2)',
+					lineWidth : 2
+				});
+				chart.streamTo(document.getElementById("voltage_chart"), 50);
+			}
+			function createTimeline2() {
+				var chart = new SmoothieChart({
+					millisPerPixel:100,
+					interpolation:'linear',
+					scaleSmoothing:0.01,
+					grid:{verticalSections:2},labels:{fontSize:20},
+					minValue:70,
+					maxValue:185,
+					horizontalLines:[{color:'#ffffff',lineWidth:1,value:160},{color:'#880000',lineWidth:2,value:200},{color:'#880000',lineWidth:2,value:0}]
+					});
+				chart.addTimeSeries(random2, {
+					strokeStyle : 'rgba(0, 0, 255, 1)',
+					fillStyle : 'rgba(0, 0, 255, 0.2)',
+					lineWidth : 2
+				});
+				chart.streamTo(document.getElementById("temperature_chart"), 50);
+			}
+			function createTimeline3() {
+				var chart = new SmoothieChart({
+					millisPerPixel:100,
+					interpolation:'linear',
+					scaleSmoothing:0.01,
+					grid:{verticalSections:4},labels:{fontSize:20},
+					minValue:95.0,
+					maxValue:100.0,
+					horizontalLines:[{color:'#ffffff',lineWidth:1,value:50},{color:'#880000',lineWidth:2,value:10},{color:'#880000',lineWidth:2,value:70}]
+					});
+				chart.addTimeSeries(random3, {
+					strokeStyle : 'rgba(205, 133, 63, 1)',
+					fillStyle : 'rgba(205, 133, 63, 0.2)',
+					lineWidth : 2
+				});
+				chart.streamTo(document.getElementById("oil_level_chart"), 50);
+			}
+		</script>
+
+</BODY>
+</HTML>

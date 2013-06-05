@@ -1,0 +1,89 @@
+.CustomStyle
+{
+   font-family: "Courier New";
+   font-size: 16px;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   color: #000080;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+img {
+	opacity: 0.9;
+}
+img:hover {
+	opacity: 1.0;
+}
+html, body, #container {
+
+	height: 100%;
+	background: url('images/bg1.png') no-repeat;
+	
+	}
+# container {
+	position:relative;
+	width: 500px;
+	float: left;
+}
+#sidebar {
+	float: left;
+	width: 100px;
+	height: 100%;
+	border-right: 2px solid #fff;
+}
+#content {
+	float: left;
+	width: 700px;
+	height: 100%;
+	border: 2px solid #fff;
+}
+#sidebar ul {
+	left:50%;
+	margin: 10px auto;
+}
+#navigation {
+	list-type: none;
+	margin: auto;
+}
+#navigation img {
+	opacity: 0.9;
+}
+#navigation img:hover {
+	opacity: 1.0;
+}
+#HVAC_buttons {
+	position: absolute;
+	bottom: 0;
+	left: 300px;
+}
+#HVAC_buttons table {
+	left:50%;
+	margin: 0 auto;
+}
+#driver_side_temp {
+	position:relative;
+	left:10px;
+	top:10px;
+	width:190px;
+	height:135px;
+}
+#passenger_side_temp {
+	position:absolute;
+	right: 10px;
+	top:10px;
+	width:190px;
+	height:135px;
+}
+.temp_buttons table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.temp_text {
+	color:#FFFFFF;
+	font-family:Arial;
+	font-size:53px;
+	text-align:center;
+}

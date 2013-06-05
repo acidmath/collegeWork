@@ -1,0 +1,183 @@
+a
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a:visited
+{
+   color: #800080;
+}
+a:active
+{
+   color: #FF0000;
+}
+a:hover
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+h1
+{
+   font-family: Arial;
+   font-size: 32px;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   color: #000000;
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
+   display: inline;
+}
+h2
+{
+   font-family: Arial;
+   font-size: 27px;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   color: #000000;
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
+   display: inline;
+}
+h3
+{
+   font-family: Arial;
+   font-size: 24px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   color: #000000;
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
+   display: inline;
+}
+h4
+{
+   font-family: Arial;
+   font-size: 21px;
+   font-weight: normal;
+   font-style: italic;
+   text-decoration: none;
+   color: #000000;
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
+   display: inline;
+}
+h5
+{
+   font-family: Arial;
+   font-size: 19px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   color: #000000;
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
+   display: inline;
+}
+h6
+{
+   font-family: Arial;
+   font-size: 16px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   color: #000000;
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
+   display: inline;
+}
+.CustomStyle
+{
+   font-family: "Courier New";
+   font-size: 16px;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   color: #000080;
+}
+/* Nav Bar */
+#wb_Image5BG
+{
+	position:absolute;
+	background-color:#9BBFE2;
+	left:0px;
+	top:0px;
+	width:100px;
+	height:400px;
+	z-index:0;
+}
+/* Home Button */
+#wb_HomeButton
+{
+position:absolute;
+left:12px;
+top:5px;
+width:80px;
+height:73px;
+z-index:3;
+}
+/* Climate Control Button */
+#wb_Image1
+{
+position:absolute;
+left:12px;
+top:85px;
+width:70px;
+height:70px;
+z-index:4;
+}
+/* Radio Button */
+#wb_RadioButton
+{
+position:absolute;
+left:12px;
+top:165px;
+width:81px;
+height:74px;
+z-index:1;
+}
+/* Diagnostic Button */
+#wb_DiagButton
+{
+position:absolute;
+left:12px;
+top:245px;
+width:81px;
+height:78px;
+z-index:2;
+}
+/* Data Log Button */
+#dataLogs
+{
+position:absolute;
+left:12px;
+top:325px;
+width:84px;
+height:73px;
+z-index:5;
+}	
+#wb_MainPage
+{
+position:absolute;
+left:100px;
+top:10px;
+width:700px;
+height:400px;
+z-index:5;
+}
+#displayUM {text-decoration: none}
+#homeButton {border:1px solid #021a40;}
+#image1 {border:1px solid #021a40;}
+#radioButton {border:1px solid #021a40;}
+#diagButton {border:1px solid #021a40;}
+#datalogs {border:1px solid #021a40;}
+
+#homeButton:hover {border:5px solid #021a40;z-index:1;}
+#image1:hover {border:5px solid #021a40;z-index:1;}
+#radioButton:hover {border:5px solid #021a40;}
+#diagButton:hover {border:5px solid #021a40;}
+#datalogs:hover {border:5px solid #021a40;}
+
+	

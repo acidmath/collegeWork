@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<title>Home Page</title>
+	<LINK REL="stylesheet" HREF="default.css">
+<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+</head>
+<body onload="createTimeline();createTimeline2();createTimeline3();"><DIV ID="container">
+   		<script language="javascript"> 
+		function tClicked() {
+			var url = "./index2.html";    
+			$(location).attr('href',url);
+		}
+		</script>
+<!-- BEGIN SIDEBAR -->
+	<DIV ID="sidebar" style="background:gray;">
+			<div ID="navigation">
+			<ul>
+				<li><a href="index.html" id="wb_Button1"><IMG SRC="images/lg1.png"></a>
+				<li><a href="ClimateControl.html" id="wb_Button2"><IMG SRC="images/lg2.png"></a>
+				<li><a href="Radio.html" id="wb_Button3"><IMG SRC="images/lg3.png"></a>
+				<li><a href="Diagnostics.html" id="wb_Button4"><IMG SRC="images/lg4.png"></a>
+			</ul>
+		</DIV>
+	</DIV>
+<!-- END SIDEBAR -->
+ 
+	  <!-- Page Content -->
+	<DIV ID="content">
+			<!-- User OnClick -->
+			<p id="userM" style="text-align: center;color:#FFF;font-size:40px;margin:0px;">Welcome <a id="displayUM" href="javascript:tClicked();" style="text-decoration:none">User</a>!</p><br>
+			<p style="text-align: center;color:#FFF;font-size:25px; margin:0px;">Please select your option from the MENU</p>
+			<table style="border-width:20px;text-align:center;margin: 0 auto;">
+				<tr>
+					<td colspan="2" style="background-color:#fff;border:2px solid #fff;"><img src="images/sponsors/csula-Logo.png" id="" style="height:100px;" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="background-color:#fff;border:2px solid #fff;"><img src="images/sponsors/EcoCAR2.png" id="" alt=""></td>
+				</tr>
+				<tr>
+					<td style="background-color:#fff;border:2px solid #fff;"><img src="images/sponsors/usde.png" id="" alt=""></td>
+					<td style="background-color:#fff;border:2px solid #fff;"><img src="images/sponsors/gm.png" id="" alt=""></td>
+				</tr>
+				<tr>
+					<td style="background-color:#fff;border:2px solid #fff;"><img src="images/sponsors/Freescale.png" id="" alt=""></td>
+					<td style="background-color:#fff;border:2px solid #fff;"><img src="images/sponsors/qnx.png" id="" alt=""></td>
+				</tr>
+			</table>
+	  </div>
+	  <!-- End Page Content -->
+   </div></body>
+</html>

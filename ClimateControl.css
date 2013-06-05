@@ -1,0 +1,169 @@
+body
+{
+   font-size: 8px;
+   line-height: 1.1875;
+   background-color: #000000;
+   color: #000000;
+}
+#rhTempDownBtn
+{
+   border: 0px #000000 solid;
+}
+#rhTempUpBtn
+{
+   border: 0px #000000 solid;
+}
+#Image5
+{
+   border: 0px #000000 solid;
+}
+#RadioButton
+{
+   border: 0px #000000 solid;
+}
+#DiagButton
+{
+   border: 0px #000000 solid;
+}
+#HomeButton
+{
+   border: 0px #000000 solid;
+}
+#Image1
+{
+   border: 0px #000000 solid;
+}
+#wb_rhTempText 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+}
+#wb_rhTempText div
+{
+   text-align: left;
+}
+#wb_Text3 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+}
+#wb_Text3 div
+{
+   text-align: left;
+}
+#wb_Text4 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+}
+#wb_Text4 div
+{
+   text-align: left;
+}
+#fanFeetBtn
+{
+   border: 0px #000000 solid;
+}
+#fanHeadBtn
+{
+   border: 0px #000000 solid;
+}
+#fanHeadFeetBtn
+{
+   border: 0px #000000 solid;
+}
+#airCirculationBtn
+{
+   border: 0px #000000 solid;
+}
+#lhTempUpBtn
+{
+   border: 0px #000000 solid;
+}
+#lhTempDownBtn
+{
+   border: 0px #000000 solid;
+}
+#wb_lhTempText 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+}
+#wb_lhTempText div
+{
+   text-align: left;
+}
+#zoneUp
+{
+   border: 0px #000000 solid;
+}
+#zoneDown
+{
+   border: 0px #000000 solid;
+}
+#airConditionBtn
+{
+   border: 0px #000000 solid;
+}
+#RearDefrostBtn
+{
+   border: 0px #000000 solid;
+}
+#frontDefrostBtn
+{
+   border: 0px #000000 solid;
+}
+#autoTempBtn
+{
+   border: 0px #000000 solid;
+}
+#wb_rhTempDownBtn {position:absolute;left:590px;top:160px;width:190px;height:135px;z-index:5}
+#rhTempDownBtn {width:190px;height:135px}
+#wb_rhTempUpBtn {position:absolute;left:590px;top:50px;width:190px;height:131px;z-index:6}
+#rhTempUpBtn {width:190px;height:131px}
+#wb_rhTempText {position:absolute;left:660px;top:150px;width:70px;height:60px;z-index:8;text-align:left}
+#rhTempText {color:#FFFFFF;font-family:Arial;font-size:53px}
+#wb_Text3 {position:absolute;left:140px;top:10px;width:130px;height:36px;z-index:9;text-align:left}
+span {color:#FFFFFF;font-family:Arial;font-size:32px}
+#wb_Text4 {position:absolute;left:580px;top:10px;width:200px;height:72px;z-index:10;text-align:left}
+#wb_fanFeetBtn {position:absolute;left:370px;top:260px;width:75px;height:67px;z-index:11}
+#fanFeetBtn {display:block;width:75px;height:67px}
+#fanFeetBtn1 {display:none;width:75px;height:67px}
+#wb_fanHeadBtn {position:absolute;left:290px;top:260px;width:75px;height:67px;z-index:12}
+#fanHeadBtn {width:75px;height:67px}
+#wb_fanHeadFeetBtn {position:absolute;left:450px;top:260px;width:75px;height:67px;z-index:13}
+#fanHeadFeetBtn {width:75px;height:67px}
+#wb_airCirculationBtn {position:absolute;left:530px;top:260px;width:75px;height:67px;z-index:14}
+#airCirculationBtn {width:75px;height:67px}
+#wb_lhTempUpBtn {position:absolute;left:110px;top:60px;width:190px;height:131px;z-index:15}
+#lhTempUpBtn {width:190px;height:131px}
+#wb_lhTempDownBtn {position:absolute;left:110px;top:170px;width:190px;height:135px;z-index:16}
+#lhTempDownBtn {width:190px;height:135px}
+#wb_lhTempText {position:absolute;left:170px;top:150px;width:70px;height:60px;z-index:17;text-align:left}
+#lhTempText {color:#FFFFFF;font-family:Arial;font-size:53px}
+
+#wb_zoneUp {position:absolute;left:410px;top:100px;width:78px;height:56px;z-index:19}
+#zoneUp {width:85px;height:33px}
+
+#wb_zoneClick {position:absolute;left:410px;top:133px;width:78px;height:56px;z-index:19}
+#zoneClick {width:85px;height:33px}
+
+#wb_zoneDown {position:absolute;left:410px;top:166px;width:78px;height:56px;z-index:19}
+#zoneDown {width:85px;height:33px}
+
+#wb_airConditionBtn {position:absolute;left:290px;top:330px;width:76px;height:65px;z-index:20}
+#airConditionBtn {width:76px;height:65px}
+#wb_rearDefrostBtn {position:absolute;left:370px;top:330px;width:76px;height:65px;z-index:21}
+#rearDefrostBtn {width:76px;height:65px}
+#wb_frontDefrostBtn {position:absolute;left:450px;top:330px;width:76px;height:65px;z-index:22}
+#frontDefrostBtn { width:76;height:65px;}
+#wb_autoTempBtn {position:absolute;left:530px;top:330px;width:75px;height:65px;z-index:23}
+#autoTempBtn {width:76px;height:65px}
+#wb_SaveButton {position:absolute;left:610px;top:308px}
+#saveImg {width:168px;height:55px}
+#wb_LoadButton {position:absolute;left:118px;top:308px}
+#loadImg {width:168px;height:55px}

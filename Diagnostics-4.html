@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<title>Diagnostic Page</title>
+		<link rel="stylesheet" href="EcoCAR2.css" type="text/css">
+		<link rel="stylesheet" href="Diagnostics.css" type="text/css">
+		<script type="text/javascript" src="scripts/smoothie.js"></script>		
+		<script type="text/javascript">
+			// Randomly add a data point every 500ms
+			var x = 1;
+			var y = 0;
+			var random = new TimeSeries();
+			var random2 = new TimeSeries();
+			var random3 = new TimeSeries();
+			
+			var value1 = 0;
+			var value2 = 0;
+			var value3 = 0;
+			
+			function volt_data() {
+				value1 = Math.sin(Math.random()/2-10) + 12;
+				document.getElementById("volt").innerHTML = value1;
+				return value1;
+			}
+			function temperature_data(x) {
+				value2 = 175*(1-Math.exp((-1)*0.1*x));
+				document.getElementById("temp").innerHTML = value2;
+				return value2;
+			}
+			function oil_data(y) {
+				var value3 = 99-0.001*y;
+				document.getElementById("soc").innerHTML = value3;
+				return value3;
+			}
+			setInterval(function() {
+				random.append(new Date().getTime(), volt_data());
+				random2.append(new Date().getTime(), temperature_data(x));
+				random3.append(new Date().getTime(), oil_data(y));
+				x++;
+				y++;
+			}, 2000);
+
+			function createTimeline() {
+				var chart = new SmoothieChart({
+					millisPerPixel:100,
+					interpolation:'linear',
+					scaleSmoothing:0.01,
+					grid:{verticalSections:4},labels:{fontSize:20},
+					minValue:0,
+					maxValue:20,
+					horizontalLines:[{color:'#ffffff',lineWidth:1,value:12},{color:'#880000',lineWidth:2,value:16},{color:'#880000',lineWidth:2,value:8}]
+					});
+				chart.addTimeSeries(random, {
+					strokeStyle : 'rgba(255, 255, 0, 1)',
+					fillStyle : 'rgba(255, 255, 0, 0.2)',
+					lineWidth : 2
+				});
+				chart.streamTo(document.getElementById("voltage_chart"), 50);
+			}
+			function createTimeline2() {
+				var chart = new SmoothieChart({
+					millisPerPixel:100,
+					interpolation:'linear',
+					scaleSmoothing:0.01,
+					grid:{verticalSections:2},labels:{fontSize:20},
+					minValue:0,
+					maxValue:200,
+					horizontalLines:[{color:'#ffffff',lineWidth:1,value:175},{color:'#880000',lineWidth:2,value:200},{color:'#880000',lineWidth:2,value:0}]
+					});
+				chart.addTimeSeries(random2, {
+					strokeStyle : 'rgba(0, 0, 255, 1)',
+					fillStyle : 'rgba(0, 0, 255, 0.2)',
+					lineWidth : 2
+				});
+				chart.streamTo(document.getElementById("temperature_chart"), 50);
+			}
+			function createTimeline3() {
+				var chart = new SmoothieChart({
+					millisPerPixel:100,
+					interpolation:'linear',
+					scaleSmoothing:0.01,
+					grid:{verticalSections:4},labels:{fontSize:20},
+					minValue:0.0,
+					maxValue:100.0,
+					horizontalLines:[{color:'#ffffff',lineWidth:1,value:50},{color:'#880000',lineWidth:2,value:10},{color:'#880000',lineWidth:2,value:70}]
+					});
+				chart.addTimeSeries(random3, {
+					strokeStyle : 'rgba(205, 133, 63, 1)',
+					fillStyle : 'rgba(205, 133, 63, 0.2)',
+					lineWidth : 2
+				});
+				chart.streamTo(document.getElementById("oil_level_chart"), 50);
+			}
+		</script>
+	</head>
+	<body onload="createTimeline();createTimeline2();createTimeline3();">
+	<DIV ID="sidebar"><!-- BEGIN SIDEBAR HTML -->
+		<UL ID="navigation">
+		  <LI><a href="index.html"><img src="images/lg1.png" id="homeButton" alt=""></a>
+		  <LI><a href="ClimateControl.html"><img src="images/lg2.png" id="image1" alt=""></a>
+		  <LI><a href="Radio.html"><img src="images/lg3.png" id="radioButton" alt=""></a>
+		  <LI><a href="Diagnostics.html"><img src="images/lg4.png" id="diagButton" alt=""></a>
+		</UL>
+	</DIV><!-- END SIDEBAR HTML -->
+
+		<div id="wb_Text1" style="position:absolute;left:110px;top:0px;width:250px;height:49px;z-index:9;text-align:left;">
+			<span style="color:#FFFFFF;font-family:Arial;font-size:33px;">Voltage<p id="volt" style="color:#FFFFFF;font-size:20px;"></p></span>
+		</div>
+		<div id="wb_Text2" style="position:absolute;left:110px;top:120px;width:250px;height:49px;z-index:10;text-align:left;">
+			<span style="color:#FFFFFF;font-family:Arial;font-size:33px;">Temperature<p id="temp" style="color:#FFFFFF;font-size:20px;"></p></span>
+		</div>
+		<div id="wb_Text3" style="position:absolute;left:110px;top:230px;width:250px;height:49px;z-index:11;text-align:left;">
+			<span style="color:#FFFFFF;font-family:Arial;font-size:33px;">State of Charge<p id="soc" style="color:#FFFFFF;font-size:20px;"></p></span>
+		</div>
+
+			<canvas id="voltage_chart" width="400" height="100" style="position:absolute;right:0px;top:0px;z-index:1000;background-color:red;"></canvas>
+			<canvas id="temperature_chart" width="400" height="100" style="position:absolute;right:0px;top:100px;z-index:1000;background-color:red;"></canvas>
+			<canvas id="oil_level_chart" width="400" height="100" style="position:absolute;right:0px;top:200px;z-index:1000;background-color:red;"></canvas>
+			
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+	<title>Climate Control</title>
+	<link rel="stylesheet" href="default.css" type="text/css">
+	<script>
+		img1 = "images/all-off.png"; 
+		img2 = "images/all-on.png"; 
+		function chng(c_img) { 
+			if (document[c_img].src.indexOf(img1)!= -1) document[c_img].src = img2; 
+			else document[c_img].src = img1; 
+		}
+	</script>
+	
+</HEAD>
+
+<BODY><DIV ID="container">
+<!-- BEGIN SIDEBAR -->
+	<DIV ID="sidebar" style="background:gray;">
+			<div ID="navigation">
+			<ul>
+				<li><a href="index.html"><IMG SRC="images/lg1.png"></a>
+				<li><a href="ClimateControl.html"><IMG SRC="images/lg2.png"></a>
+				<li><a href="Radio.html"><IMG SRC="images/lg3.png"></a>
+				<li><a href="Diagnostics.html"><IMG SRC="images/lg4.png"></a>
+			</ul>
+		</div>
+	</DIV>
+<!-- END SIDEBAR -->
+<!-- BEGIN CONTENT -->
+	<DIV ID="content" class="hvac">
+		<DIV id="driver_temp">
+			<TABLE >
+				<TR><TH><span class="ac_text">DRIVER</span></TR>
+				<TR><TD><img src="images/TempUpBtn.png" id="lhTempUpBtn"></TR>
+				<TR><TD><span id="lhTempText" class="temp_text">99</span></TR>
+				<TR><TD><img src="images/TempDownBtn.png" id="lhTempDownBtn"></TR>
+			</TABLE>
+		</DIV>
+		
+		<DIV ID="zone">
+			<TABLE >
+				<TR><TD><img src="images/TempUpBtn.png" id="zoneUp"></TR>
+				<TR><TD style="height:85px;"><a href="javascript:chng('imgClick');"><img src="images/all-off.png" id="zoneClick" name="imgClick" alt=""></a></TR>
+				<TR><TD><img src="images/TempDownBtn.png" id="zoneDown"></TR>
+			</TABLE>
+		</DIV>
+		<DIV ID="passenger_temp">
+			<TABLE >
+				<TR><TH><span class="ac_text">PASSENGER</span></TR>
+				<TR><TD><img src="images/TempUpBtn.png" id="rhTempUpBtn"></TR>
+				<TR><TD><span id="rhTempText" class="temp_text">99</span></TR>
+				<TR><TD><img src="images/TempDownBtn.png" id="rhTempDownBtn"></TR>
+			</TABLE>
+		</DIV>
+		<DIV ID="HVAC_buttons">
+			<TABLE >
+				<TR>
+					<TD><img src="images/fanHeadBtn.png" id="fanHeadBtn">
+					<TD><img src="images/fanFeetBtn.png" id="fanFeetBtn">
+					<TD><img src="images/fanHeadFeetBtn.png" id="fanHeadFeetBtn">
+					<TD><img src="images/frontDefrostBtn.png" id="frontDefrostBtn">
+				</TR>
+				<TR>
+					<TD><img src="images/airCirculationBtn.png" id="airCirculationBtn">
+					<TD><img src="images/airConditionBtn.png" id="airConditionBtn">
+					<TD><img src="images/autoTempBtn.png" id="autoTempBtn">
+					<TD><img src="images/rearDefrostBtn.png" id="rearDefrostBtn">
+				</TR>
+			</TABLE>
+		</DIV>
+		<DIV ID="hvac_save">
+			<TABLE >
+				<TR>
+					<TD><img src="images/saveBtn.png" id="saveImg">
+				</TR>
+				<TR>
+					<TD><img src="images/loadBtn.png" id="loadImg">
+				</TR>
+			</TABLE>
+		</DIV>
+</DIV>	  
+<!-- END CONTENT -->
+
+<!-- SCRIPT DECLARATIONS -->
+    <script type="text/javascript" src="scripts/Button.js"></script>
+    <script type="text/javascript" src="scripts/mainDB.js"></script>    
+    <script type="text/javascript" src="scripts/Validation.js"></script>
+	<script type="text/javascript" src="scripts/ClimateControl.js"></script>
+	<script>
+		createTheTables();
+		initClimateControl();
+	</script>
+</DIV></BODY>
+</html>

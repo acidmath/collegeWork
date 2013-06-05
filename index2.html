@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+      <title>Mechanic Page</title>
+	  <LINK REL="stylesheet" HREF="mLogin.css">
+	<LINK REL="stylesheet" HREF="default.css">
+	
+	  <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+   </head>
+   <body onload="createTimeline();createTimeline2();createTimeline3();"><DIV ID="container">
+   		<script language="javascript"> 
+		
+		function relocated() {
+			var url = "./index.html";    
+			$(location).attr('href',url);
+		}
+		
+		function relocate() {
+			var url = "./datalog.html";    
+			$(location).attr('href',url);
+		}
+		
+		function validate() { 
+			var un = document.mLogin.username.value;
+			var pw = document.mLogin.password.value;
+			var valid = false;
+
+			var unArray = ["mechanic", "admin"];
+			var pwArray = ["mechanic", "admin"];
+
+			for (var i=0; i <unArray.length; i++) {
+				if ((un == unArray[i]) && (pw == pwArray[i])) {
+				valid = true;
+				break;
+				}
+			}
+
+			if (valid) {
+				alert ("Login was successful");
+				relocate();
+				return false;
+			}
+			else {
+				alert ("Invalid username and/or password.");
+				document.mLogin.username.value = "";
+				document.mLogin.password.value = "";
+				setTimeout("document.mLogin.username.focus()", 25);
+				setTimeout("document.mLogin.username.select()", 25);
+			}
+
+		}
+		</script>
+<!-- BEGIN SIDEBAR -->
+	<DIV ID="sidebar" style="background:gray;">
+			<div ID="navigation">
+			<ul>
+				<li><a href="index.html" id="wb_Button1"><IMG SRC="images/lg1.png"></a>
+				<li><a href="ClimateControl.html" id="wb_Button2"><IMG SRC="images/lg2.png"></a>
+				<li><a href="Radio.html" id="wb_Button3"><IMG SRC="images/lg3.png"></a>
+				<li><a href="Diagnostics.html" id="wb_Button4"><IMG SRC="images/lg4.png"></a>
+			</ul>
+		</DIV>
+	</DIV>
+<!-- END SIDEBAR -->
+ 
+	  <!-- Page Content -->
+	<DIV ID="content">
+			<p style="text-align: center; color:#FFF; font-size:40px; margin-bottom: 30px;margin-top:0px;">Welcome <a id="displayUM" href="javascript:relocated();" style="text-decoration:none">Mechanic</a>!</p>
+
+		<!-- Hidden Untill Called with JS-->
+		<div id="containerLogin" style="display: block">
+			<section id="contentLogin" style="margin-top: -30px;">
+				<form name="mLogin" method="post" onsubmit="return(validate());">
+					<h1>Login</h1>
+					<div style="padding-top:10px;">
+						<input type="text" id="username" />
+					</div>
+					<div>
+						<input type="password" id="password" />
+					</div>
+					<div>
+						<input type="submit" value="Log in" name="Submit"/>
+					</div>
+				</form>
+			</section>
+		</div>
+		<br><br>
+		
+	  </div>
+	  <!-- End Page Content -->
+   </div></body>
+</html>

@@ -1,0 +1,8 @@
+key radio_presets value
+key radio_fm_station
+key radio_am_station
+key radio_station value
+key radio_stationTuner value
+key radio_tuner value
+key radio_presets value
+key volume valuekey

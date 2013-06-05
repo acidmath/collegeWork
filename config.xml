@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" 
+		xmlns:rim="http://www.blackberry.com/ns/widgets" 
+		version="1.0.0.5" id="EcoCar1">
+	<name>EcoCar1</name>
+	<author>EcoCar1</author>
+    <description>EcoCar1</description>
+    <icon src="images/icon.png"/>
+	<content src="index.html"/>
+	<feature id="qnx.application" required="true" version="1.0.0.0"/>
+	<feature id="qnx.application.event" required="true" version="1.0.0.0"/>
+	<feature id="qnx.audiomixer" required="true" version="1.0.0.0"/>
+	<feature id="qnx.volume" required="true" version="1.0.0.0"/>
+	<feature id="qnx.bluetooth" required="true" version="1.0.0.0"/>
+	<feature id="qnx.theme" required="true" version="1.0.0.0"/>
+	<feature id="qnx.radio" required="true" version="1.0.0.0"/>
+	<feature id="qnx.hvac" required="true" version="1.0.0.0"/>
+	<feature id="qnx.sensors" required="true" version="1.0.0.0"/>
+	<feature id="qnx.user" required="true" version="1.0.0.0"/>
+	<feature id="qnx.settings" required="true" version="1.0.0.0"/>
+	<access uri="*" subdomains="true"/>
+</widget>
