@@ -272,22 +272,20 @@ function rearDefrostBtnClick () {
 function autoTempBtnClick () {
 
 	//lower temp values, turn on AC, and a head/food btn
-	if(!autoTempBtnValue){
 	while(fan_temperature_l!=16)
 		{
-			if(fan_temperature_l<16)lhTempUpBtnClick();
+			if(fan_temperature_l<info[7])lhTempUpBtnClick();
 			else lhTempDownBtnClick();
 		}
 		//load right temp
 		while(fan_temperature_r!=16)
 		{
-			if(fan_temperature_r<16)rhTempUpBtnClick();
+			if(fan_temperature_r<info[8])rhTempUpBtnClick();
 			else rhTempDownBtnClick();
 		}
 		if(!airConditionBtnValue)
 			{
 				airConditionBtnClick ();
-			}
 			}
 		if (autoTempBtnValue) {
 			autoTempBtn.setAttribute("src", "images/autoTempBtn.png");
